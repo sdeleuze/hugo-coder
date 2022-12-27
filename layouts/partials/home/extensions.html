@@ -1,12 +1,13 @@
 <hr>
-<section class="container list" style="text-align: left;">
+<section class="container list">
 	<ul>
-{{range .Site.RegularPages}}
+{{ range (.Paginator 10).Pages }}
     <li>
   <span class="date">{{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
   <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
 </li>
 {{ end }}
 </ul>
+{{ partial "pagination.html" . }}
 </section>
 
