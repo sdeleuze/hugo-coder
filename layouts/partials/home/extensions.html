@@ -1,8 +1,7 @@
 <hr>
 <section class="container list" style="text-align: left;">
 	<ul>
-{{ $pag := .Paginate .Site.RegularPages }}
-{{ range $pag.Pages }}
+{{range .Site.RegularPages}}
     <li>
   <span class="date">{{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
   <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
