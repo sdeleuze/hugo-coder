@@ -3,6 +3,9 @@
   <head>
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
     {{ partial "head.html" . }}
+    {{ if .Params.externalLink }}
+    <meta http-equiv="refresh" content="0; URL='{{ .Params.externalLink }}'" />
+    {{ end }}
   </head>
 
 {{ $csClass := "colorscheme-light" }}
